@@ -1,0 +1,67 @@
+body{
+    margin:0;
+  }
+  .layout {
+   display: flex;
+    flex-direction: column; */
+    min-height: 100vh; 
+  }
+  .layout {
+    font: 1em system-ui;
+    height:auto;
+      min-height: 100vh;
+      display:flex;
+      flex-direction: column;
+  }
+  .bottom{
+      padding: 1em;
+      background-color: rgb(0, 0, 0);
+      color:rgb(255, 255, 255);
+  }
+  .middle{
+      background-color: rgb(171, 170, 170);
+      padding: 1em;
+      flex: 1;
+  }
+  .search{
+      margin-left: 1%;
+  }
+  input{
+      border-radius: 15px;
+      border: none;
+      background-color: white;
+      color: black;
+      padding-left: 30px;
+      outline: none;
+      background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/ios-search.svg);
+      background-repeat: no-repeat;
+      background-size: 10%;
+      background-position: 5px;
+  }
+  .user{
+    width: 300px;
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  img{
+      max-width: 40px;
+      max-height: 60px;
+      border-radius: 50%;
+      display: inline-block;
+  }
+  .user-image{
+      object-fit: fill;
+  }
+  header{
+      background:grey;
+      padding: 10px;
+      color:lightgray;
+      border-bottom: 1px solid black;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+  }
+  
