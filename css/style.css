@@ -86,7 +86,6 @@ header {
   justify-content: space-evenly;
 }
 .action {
-  margin-left: -10px;
   width: 5%;
   display: flex;
   flex-flow: row;
@@ -174,5 +173,84 @@ ion-icon {
 }
 .time {
   margin: 0 6px;
+}
+
+@media (max-width: 1400px) {
+    
+  .actions {
+    width: 10%;
+  }
+  
+  .progress {
+    width: 50%;
+  }
+  
+  .options {
+    width: 40%;
+  }
+  
+}
+
+@media (max-width: 980px) {
+  
+  .actions {
+    width: 10%;
+  }
+  
+  .progress {
+    width: 40%;
+  }
+  
+  .options {
+    width: 50%;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  
+  .actions {
+    width: 25%;
+  }
+  
+  .progress {
+    width: 75%;
+  }
+  
+  .options {
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  
+  .actions {
+    width: 100%;
+    justify-content: space-around;
+    padding: 11px 0;
+  }
+  
+  .progress {
+    width: 100%;
+    padding: 11px 0;
+  }
+  
+  .options {
+    width: 100%;
+    padding: 11px 0;
+  }
+  
+}
+
+}
+
+@media (max-width: 768px) {
+
+    .action {
+      padding-top: 11px;  
+    }
+
+
 }
 
