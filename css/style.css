@@ -1,103 +1,177 @@
-body{
-    margin:0;
-  }
-  .layout {
-   display: flex;
-    flex-direction: column; */
-    min-height: 100vh; 
-  }
-  .layout {
-    font: 1em system-ui;
-    height:auto;
-      min-height: 100vh;
-      display:flex;
-      flex-direction: column;
-  }
-  .middle{
-      background-color: rgb(78, 78, 78);
-      padding: 1em;
-      flex: 1;
-  }
-  .search{
-      margin-left: 1%;
-  }
-  input{
-      border-radius: 15px;
-      border: none;
-      background-color: white;
-      color: black;
-      padding-left: 30px;
-      outline: none;
-      background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/ios-search.svg);
-      background-repeat: no-repeat;
-      background-size: 10%;
-      background-position: 5px;
-  }
-  .user{
-    width: 300px;
-    margin-left: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  img{
-      max-width: 40px;
-      max-height: 60px;
-      border-radius: 50%;
-      display: inline-block;
-  }
-  .user-image{
-      object-fit: fill;
-  }
-  header{
-      background:rgb(25, 25, 25);
-      padding: 10px;
-      color:lightgray;
-      border-bottom: 1px solid black;
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-  }
-  .user-name{
-      color: rgb(255, 255, 255);
-  }
-  .current-track{
-      background:rgb(32, 32, 32);
-      padding: 5px 15px;
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-  }
-  .action{
-      width: 5%;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
-      align-items: center;
-  }
-  ion-icon{
-      font-size: 24px;
-      color: rgb(200, 200, 200);
-  }
-  ion-icon :hover{
-      color: white;
-      cursor: pointer;
-  }
-  .play{
-      font-size: 36px;
-  }
-  .progress{
-      width: 700%;
-      padding: 0 30px;
-      color: grey;
-      font-size: 11px;
-      display: flex;
-      flex-flow: row;
-      justify-content: space-between;
-      align-items: center;
-  }
-  .bar{
-      width: 100%;
-      padding: 0 15px;
-  }
+body {
+  margin: 0;
+}
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.layout {
+  font: 1em system-ui;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.middle {
+  background-color: rgb(78, 78, 78);
+  padding: 1em;
+  flex: 1;
+}
+.search {
+  margin-left: 1%;
+}
+input {
+  border-radius: 15px;
+  border: none;
+  background-color: white;
+  color: black;
+  padding-left: 30px;
+  outline: none;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/ios-search.svg);
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: 5px;
+}
+select {
+  border-radius: 15px;
+  border: none;
+  background-color: white;
+  color: rgb(73, 70, 70);
+  padding-left: 30px;
+  outline: none;
+}
+button {
+  border-radius: 15px;
+  border: none;
+  background-color: white;
+  color: rgb(63, 62, 62);
+  padding-left: 30px;
+  outline: none;
+  align-self: center;
+}
+.user {
+  width: 300px;
+  margin-left: auto;
+  margin-right: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+img {
+  max-width: 40px;
+  max-height: 60px;
+  border-radius: 50%;
+  display: inline-block;
+}
+header {
+  background: rgb(34, 32, 32);
+  padding: 10px;
+  color: lightgray;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.user-name {
+  margin-left: 15px;
+  color: rgb(255, 255, 255);
+}
+.current-track {
+  background: rgb(35, 35, 35);
+  padding: 5px 15px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.action {
+  margin-left: -10px;
+  width: 5%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+ion-icon {
+  font-size: 36px;
+  color: rgb(255, 255, 255);
+  justify-self: space-around;
+}
+.bar {
+  background-color: honeydew;
+  width: 100px;
+  height: 2px;
+  padding: 0 15px;
+}
+.options {
+  width: 25%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.lyrics {
+  color: honeydew;
+  font-size: 11px;
+  text-transform: uppercase;
+  /* width: 15%; */
+  padding: 0 15px 0 0;
+  text-decoration: none;
+}
+.song-info {
+  color: honeydew;
+  font-size: 11px;
+  /* width: 15%; */
+  padding: 0 15px 0 0;
+  text-decoration: none;
+}
+.controls {
+  width: 85%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.devices :hover {
+  text-decoration: none;
+}
+ion-icon {
+  margin: 14px;
+}
+.control-device {
+  display: flex;
+  flex-flow: row;
+}
+.devicetext {
+  align-self: center;
+  color: honeydew;
+  font-size: 11px;
+  text-transform: uppercase;
+  width: 15%;
+  padding: 0 15px 0 0;
+  text-decoration: none;
+}
+.control-volume {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.song-volume {
+  background-color: honeydew;
+  width: 60px;
+  height: 2px;
+  padding: 0 15px;
+  align-self: center;
+}
+.start {
+  /* margin-left: 120px;
+  margin-right: 10px; */
+  vertical-align: middle;
+  color: white;
+}
+.finish {
+  color: white;
+  /* margin: 10px; */
+}
+.time {
+  margin: 0 6px;
+}

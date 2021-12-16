@@ -6,14 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 <body>
     <main class="layout">
         <header class="top">
-           <div class="search">
-            <input type="text" placeholder="Search" />
-           </div>
+           <form class="search">
+            <legend hidden>Display Music</legend>
+            <input type="text" name="find" id="find" placeholder="Search" />
+            <legend hidden>Sort Music</legend>
+            <select name="searchSort" id="searchSort">
+              <option value="hot-hit">Most to least popular</option>
+              <option value="outsider-song">Least to most popular</option>
+              <option value="newest">Newest release</option>
+            </select>
+            <legend hidden>Sort Music</legend>
+            <select name="searchSort" id="searchSort">
+                <option value="genre-pop">Pop</option>
+                <option value="genre-jazz">Rock</option>
+                <option value="genre-rnb">R&B</option>
+                <option value="genre-rap">Rap</option>
+                <option value="genre-hiphop">HipHop</option>
+                <option value="genre-classic">Classic</option>
+              </select>
+              <button type="submit">Sort</button>
+           </form>
            <div class="user">
                <span class="user-img">
                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib
@@ -27,20 +45,44 @@
            </div>
         </header>
         <article class="middle">
-            
+            <section class="results">
+                <h2 class="subheading">6 Results</h2>
+        
+                <div id="products" class="products"></div>
+              </section>
+        
+              <nav aria-label="Pagination" class="pagination">
+                <p>1-6 of 23 products found</p>
+                <ol class="pages">
+                  <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+                  <li><a href="#" aria-label="Page 2">2</a></li>
+                  <li><a href="#" aria-label="Page 3">3</a></li>
+                  <li><a href="#" aria-label="Page 4">4</a></li>
+                  <li><a href="#" aria-label="Page 5">5</a></li>
+                </ol>
+              </nav>
+            </main>
         </article>
         <footer class="current-track">
             <div class="current-track action">
-                <ion-icon name="play-skip-back-circle-outline" class="skipforward"></ion-icon>  <ion-icon name="play-circle-outline" class="play"></ion-icon>
-                <ion-icon name="play-skip-forward-circle-outline" class="skipbackward"></ion-icon>           
+              <a href="#" class="skipbackward">  
+                <ion-icon name="play-skip-back-circle-outline" ></ion-icon> 
+            </a>
+             <a href="#" class="play">
+                <ion-icon name="play-circle-outline" ></ion-icon>
+            </a>
+             <a href="#" class="skipforward">
+                <ion-icon name="play-skip-forward-circle-outline"></ion-icon> 
+             </a>          
              </div>
             <div class="current-track progress">
-                <div class="current-track progress start">0:01</div>
-                <div class="current-track progress bar">
-                    <div id="song-progress"></div>
+                <div class="start time">0:01</div>
+                <div class="bar">
+                <div class="song-progress"></div>
                 </div>
-                <div class="current-track progress finish">3:46</div>
+                <div class="finish time">3:46</div>
             </div>
+            <a href="#" class="song-info">song name</a>
             <div class="current-track options">
                 <a href="#" class="lyrics">Lyrics</a>
                 <span class="controls">
@@ -50,20 +92,14 @@
                       <a href="#" class="control">
                         <ion-icon name="shuffle-outline" class="shuffle"></ion-icon>                 
                          </a>
-                      
-                      <a href="#" class="control">
-                        <ion-icon name="refresh-circle-outline" class="refresh"></ion-icon>       
-                       </a>
-                      
-                      <a href="#" class="control devices">
+                      <a href="#" class="control-device">
                         <ion-icon name="phone-portrait-outline" class="iphone"></ion-icon>
-                        <span>Devices Available</span>
+                        <span class="devicetext">Devices Available</span>
                       </a>
-                      
-                      <a href="#" class="control volume">
-                        <ion-icon name="volume-high-outline" class="volume high"></ion-icon>                      
-                        <div id="song-volume"></div>
-                      </a>
+                      <a href="#" class="control-volume">
+                        <ion-icon name="volume-medium-outline"></ion-icon>                       
+                         <div class="song-volume"></div>
+                    </a>
                 </span>
             </div>
         </footer>
