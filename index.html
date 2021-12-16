@@ -7,6 +7,7 @@
     <title>Music Player</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script src="./js/script.js" defer></script>
 </head>
 <body>
     <main class="layout">
@@ -43,24 +44,10 @@
                </span>
            </div>
         </header>
-        <article class="middle">
-            <section class="results">
-                <h2 class="subheading">6 Results</h2>
-        
-                <div id="songs" class="songs"></div>
-              </section>
-        
-              <nav aria-label="Pagination" class="pagination">
-                <p>1-6 of 23 products found</p>
-                <ol class="pages">
-                  <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-                  <li><a href="#" aria-label="Page 2">2</a></li>
-                  <li><a href="#" aria-label="Page 3">3</a></li>
-                  <li><a href="#" aria-label="Page 4">4</a></li>
-                  <li><a href="#" aria-label="Page 5">5</a></li>
-                </ol>
-              </nav>
-            </main>
+        <article class="middle">             
+      <main>
+        <ul id="songs"></ul>
+      </main>
         </article>
         <footer class="current-track">
             <div class="current-track action">
