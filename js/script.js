@@ -10,7 +10,6 @@ const songsOfTheList = [
     { name: `Heat Waves`, genre: `R&B`, artist: `Glass Animals`, country: `UK`}, //8
 ]
 console.table(songsOfTheList)
-
 const appendSongToList = function(song){
     document.querySelector(`#songs`).innerHTML += `<li class="song ${song.country}">${song.name}</li>`
 }
