@@ -1,19 +1,54 @@
-const songsOfTheList = [
-    { name: `drivers license`, genre: `indie pop`, artist: `Olivia Rodrigo`, country:`US`}, //0
-    { name:`Kiss Me More`, genre:`R&B`, artist: `Doja Cat`, country:`US`}, //1
-    { name:`Save Your Tears (Remix)`, genre: `synthwave`, artist:`the Weeknd` `Ariana Grande`, country:`Canada`}, //2
-    { name:`STAY`, genre: `pop`, artist:`Justin Bieber` `the Kid Laroi`, country: `Canada`}, //3
-    { name:`Easy On Me`, genre: `pop`, artist: `Adele`, country: `UK`}, //4
-    { name:`Wants and Needs`, genre:`rap`, artist: `Drake`, country: `Canada`}, //5 
-    { name:`Levitating`, genre: `funk`, artist:`Dua Lipa`, country: `UK`}, //6
-    { name:`Peaches`, genre: `trap`, artist: `Justin Bieber`, country: `Canada`}, //7
-    { name: `Heat Waves`, genre: `R&B`, artist: `Glass Animals`, country: `UK`}, //8
+const songList = [
+    {
+        artist: `ItsWatR`,
+        name: `Let It Go`,
+        prodID: 1,
+        length: 230,
+        rating: 3.9,
+        likeit: true,
+        isplaying: false,
+    },
+    {
+        artist: `Coma-Media`,
+        name: `Jazzy Abstract Beat`,
+        prodID: 2,
+        length: 130,
+        rating: 4.2,
+        likeit: true,
+        isplaying: false,
+    },
+    {
+        artist: `Coma-Media`,
+        name: `Sexy Fashion Beats`,
+        prodID: 3,
+        length: 130,
+        rating: 4.5,
+        likeit: true,
+        isplaying: false,
+    },
+    {
+        artist: `tobylane`,
+        name: `Fluidity (1:00 IG edit)`,
+        prodID: 4,
+        length: 230,
+        rating: 3.5,
+        likeit: true,
+        isplaying: false,
+    },
+    {
+        artist: `ItsWatR`,
+        name: `Awakening Instrumental`,
+        prodID: 5,
+        length: 310,
+        rating: 4.1,
+        likeit: true,
+        isplaying: false,
+    }
 ]
-console.table(songsOfTheList)
-const appendSongToList = function(song){
-    document.querySelector(`#songs`).innerHTML += `<li class="song ${song.country}">${song.name}</li>`
-}
-songsOfTheList.forEach(appendSongToList)
+
+
+
+
 
 
 
