@@ -12,26 +12,22 @@
 <body>
     <main class="layout">
         <header class="top">
-           <form class="search">
-            <legend hidden>Display Music</legend>
-            <input type="text" name="find" id="find" placeholder="Search" />
-            <legend hidden>Sort Music</legend>
-            <select name="searchSort" id="searchSort">
-              <option value="hot-hit">Most to least popular</option>
-              <option value="outsider-song">Least to most popular</option>
-              <option value="newest">Newest release</option>
-            </select>
-            <legend hidden>Sort Music</legend>
-            <select name="searchSort" id="searchSort">
-                <option value="genre-pop">Pop</option>
-                <option value="genre-jazz">Rock</option>
-                <option value="genre-rnb">R&B</option>
-                <option value="genre-rap">Rap</option>
-                <option value="genre-hiphop">HipHop</option>
-                <option value="genre-classic">Classic</option>
-              </select>
-              <button type="submit">Sort</button>
-           </form>
+          <form class="filters" name="filterproducts" id="filterproducts">
+            <h2>Filter</h2>
+            <div class="filter-fields">
+                <fieldset>
+                    <legend hidden> Display Order</legend>
+                    <label for="searchName">Name</label>
+                    <input type="search" name="searchName" id="searchName">
+                </fieldset>
+                <fieldset>
+                    <legend hidden></legend>
+                    <label for="rate">Rate</label>
+                    <input type="number" name="rate" id="rate" value="5">
+                </fieldset>
+                <input type="submit" class="submit" id="submit">
+            </div>
+        </form>
            <div class="user">
                <span class="user-img">
                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib
