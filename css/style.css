@@ -175,19 +175,20 @@ ion-icon {
   margin: 0 6px;
 }
 
-@media only screen and (max-width: 1400px) {
-    
-  .actions {
-    width: 10%;
+@media only screen and (max-width: 1000px) {
+  .current-track{
+      grid-template-columns: repeat(2,1fr);
+      grid-template-rows: repeat(4,1fr);
   }
-  
-  .progress {
-    width: 50%;
-  }
-  
-  .options {
-    width: 40%;
-  }
-  
 }
+@media only screen and (max-width: 800px) {
+  .current-track{
+      display:block;
+  }
+}
+span{
+  text-decoration: none;
+  list-style: none;
+}
+
 
