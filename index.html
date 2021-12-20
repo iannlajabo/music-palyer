@@ -59,14 +59,14 @@
                 <ion-icon name="play-skip-forward-circle-outline" id="next"></ion-icon> 
              </a>          
              </div>
-            <div class="current-track progress">
-                <div class="start time">0:01</div>
-                <div class="bar">
-                <div class="song-progress"></div>
-                </div>
-                <div class="finish time">3:46</div>
-            </div>
-            <a href="#" class="song-info">song name</a>
+             <div class="progress">
+              <data id="tracktime">0:00</data>
+              <input type="range" id="trackprogress" min="0" max="1" step=".01" value="0">
+              <data id="trackduration">0:00</data>
+          </div>
+          <div class="albuminfo">
+            <p class="name" id="name"></p>
+        </div>
             <div class="current-track options">
                 <a href="#" class="lyrics">Lyrics</a>
                 <span class="controls">
@@ -80,10 +80,6 @@
                         <ion-icon name="phone-portrait-outline" class="iphone"></ion-icon>
                         <span class="devicetext">Devices Available</span>
                       </a>
-                      <a href="#" class="control-volume">
-                        <ion-icon name="volume-medium-outline"></ion-icon>                       
-                         <div class="song-volume"></div>
-                    </a>
                 </span>
             </div>
         </footer>
