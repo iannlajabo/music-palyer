@@ -65,7 +65,7 @@ const musiclist = [
 const load = function (music){
     document.querySelector(`#information`).innerHTML += `
     <li class="song">
-    <p>${music.name} by ${music.singer}</p>
+    <p>${music.name} by <b>${music.singer} </b>Rating: ${music.rating}</p>
     <i class="${music.icon}" data-prodID="${music.prodID}"></i>
     </li>
     `
