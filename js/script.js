@@ -1,9 +1,16 @@
+const name = document.querySelector(`#name`);
+const playorpause = document.querySelector(`#play`);
+const forward = document.querySelector(`#next`);
+const backward = document.querySelector(`#previous`);
+const trackTime = document.querySelector(`#tracktime`);
+const trackDuration = document.querySelector(`#trackduration`);
+const trackProgress = document.querySelector(`#trackprogress`);
+let num = 0;
 const musiclist = [
     {
         singer: `ItsWatR`,
         name: `Let It Go`,
         icon: `fas fa-play-circle fa-2x`,
-
         prodID: 1,
         length: 230,
         rating: 3.9,
@@ -14,7 +21,6 @@ const musiclist = [
         singer: `Coma-Media`,
         name: `Jazzy Abstract Beat`,
         icon: `fas fa-play-circle fa-2x`,
-
         prodID: 2,
         length: 130,
         rating: 4.2,
@@ -55,17 +61,7 @@ const musiclist = [
         isplaying: false,
     }
 ]
-const theAudio = new Audio();
-const albumpicture = document.querySelector(`#albumpicture`);
-const name = document.querySelector(`#name`);
-const albumname = document.querySelector(`#albumname`);
-const playorpause = document.querySelector(`#stop`);
-const forward = document.querySelector(`#next`);
-const backward = document.querySelector(`#previous`);
-const trackTime = document.querySelector(`#tracktime`);
-const trackDuration = document.querySelector(`#trackduration`);
-const trackProgress = document.querySelector(`#trackprogress`);
-let num = 0;
+
 const load = function (music){
     document.querySelector(`#information`).innerHTML += `
     <li class="song">
@@ -125,7 +121,6 @@ const alteraction = function(){
          document.querySelector(`#fa-stop`).className = "fas fa-2x fa-stop";
          theAudio.play();
      }
-
 }
 
 
