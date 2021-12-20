@@ -214,3 +214,9 @@ span {
   margin-top: 0.5em;
   float: right;
 }
+.filter-fileds{
+  border: none;
+}
+fieldset{
+  border: none;
+}
