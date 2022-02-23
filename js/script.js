@@ -55,9 +55,7 @@ const musiclist = [
 ]
 
 const theAudio = new Audio();
-const albumpicture = document.querySelector(`#albumpicture`);
 const name = document.querySelector(`#name`);
-const albumname = document.querySelector(`#albumname`);
 const playorpause = document.querySelector(`#stop`);
 const forward = document.querySelector(`#next`);
 const backward = document.querySelector(`#previous`);
@@ -131,18 +129,11 @@ const nextsong = function(){
     num = (num + 1) > 12 ? 1: num + 1;
     theAudio.src=`music/${num}.mp3`;
     theAudio.play();
-
-    albumpicture.src=`albumpic/${num}.jpg`;
-    name.textContent = `Name:${musiclist[num].name}`
-    albumname.textContent=`Album:${musiclist[num].albumname}`;
 }
 const previoussong = function(){
     num = (num -1) < 0 ? 12: num -1;
     theAudio.src=`music/${num}.mp3`;
     theAudio.play();
-    albumpicture.src=`albumpic/${num-1}.jpg`;
-    name.textContent = `Name:${musiclist[num-1].name}`
-    albumname.textContent=`Album:${musiclist[num-1].albumname}`;
 }
 
 theAudio.addEventListener(`canplaythrough`,event =>{
