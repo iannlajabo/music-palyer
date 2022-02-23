@@ -1,11 +1,3 @@
-const name = document.querySelector(`#name`);
-const playorpause = document.querySelector(`#play`);
-const forward = document.querySelector(`#next`);
-const backward = document.querySelector(`#previous`);
-const trackTime = document.querySelector(`#tracktime`);
-const trackDuration = document.querySelector(`#trackduration`);
-const trackProgress = document.querySelector(`#trackprogress`);
-let num = 0;
 const musiclist = [
     {
         singer: `ItsWatR`,
@@ -62,40 +54,51 @@ const musiclist = [
     }
 ]
 
-const load = function (music){
+const theAudio = new Audio();
+const albumpicture = document.querySelector(`#albumpicture`);
+const name = document.querySelector(`#name`);
+const albumname = document.querySelector(`#albumname`);
+const playorpause = document.querySelector(`#stop`);
+const forward = document.querySelector(`#next`);
+const backward = document.querySelector(`#previous`);
+const trackTime = document.querySelector(`#tracktime`);
+const trackDuration = document.querySelector(`#trackduration`);
+const trackProgress = document.querySelector(`#trackprogress`);
+let num = 0;
+const testcode = function (music){
     document.querySelector(`#information`).innerHTML += `
     <li class="song">
-    <p>${music.name} by <b>${music.singer} </b>Rating: ${music.rating}</p>
-    <i class="${music.icon}" data-prodID="${music.prodID}"></i>
+    <p>${music.name}</p>
+    <i class="${music.icon}" data-prodid="${music.prodID}"></i>
     </li>
     `
 }
 
 
 
-const filterfunction = function(){
+const condition = function(){
     const search = document.querySelector(`#searchName`).value;
     const rating = document.querySelector(`#rate`).value;
     document.querySelector(`#information`).innerHTML = ``;
-    musiclist.filter(product => product.rating <= rating).filter(product => product.name.toUpperCase().includes(search.toUpperCase())).forEach(load)
+    musiclist.filter(product => product.rating <= rating).filter(product => product.name.toUpperCase().includes(search.toUpperCase())).forEach(testcode)
 }
 
 const filterForm = document.querySelector(`#filterproducts`);
 
 filterForm.addEventListener(`submit`,function(event){
     event.preventDefault();
-    filterfunction();
+    condition();
 })
 
 document.querySelector(`#rate`).addEventListener(`change`, function(event) {
-    filterfunction();
+    condition();
 })
 
 document.querySelector(`#searchName`).addEventListener(`input`, function(event) {
-    filterfunction();
+    condition();
 })
 window.addEventListener(`load`,function(event){
-    filterfunction();
+    condition();
     document.querySelector(`#information`).addEventListener(`click`, function(event){
         const iitem=  event.target.closest(`i`);
         console.log(iitem.dataset.prodid);
@@ -112,7 +115,7 @@ window.addEventListener(`load`,function(event){
 })
 
 
-const alteraction = function(){
+const changebutton = function(){
      if(document.querySelector(`#fa-stop`).className === "fas fa-2x fa-stop"){
          theAudio.pause();
          document.querySelector(`#fa-stop`).className = "fas fa-2x fa-play";
@@ -121,6 +124,45 @@ const alteraction = function(){
          document.querySelector(`#fa-stop`).className = "fas fa-2x fa-stop";
          theAudio.play();
      }
+
 }
 
+const nextsong = function(){
+    num = (num + 1) > 12 ? 1: num + 1;
+    theAudio.src=`music/${num}.mp3`;
+    theAudio.play();
 
+    albumpicture.src=`albumpic/${num}.jpg`;
+    name.textContent = `Name:${musiclist[num].name}`
+    albumname.textContent=`Album:${musiclist[num].albumname}`;
+}
+const previoussong = function(){
+    num = (num -1) < 0 ? 12: num -1;
+    theAudio.src=`music/${num}.mp3`;
+    theAudio.play();
+    albumpicture.src=`albumpic/${num-1}.jpg`;
+    name.textContent = `Name:${musiclist[num-1].name}`
+    albumname.textContent=`Album:${musiclist[num-1].albumname}`;
+}
+
+theAudio.addEventListener(`canplaythrough`,event =>{
+    trackTime.textContent = secondtomin(theAudio.currentTime);
+    trackDuration.textContent = secondtomin(theAudio.duration);
+    trackProgress.value = 0;
+})
+
+theAudio.addEventListener(`durationchange`,event =>{
+    trackDuration.textContent = secondtomin(theAudio.duration);
+    trackTime.value = 0;
+})
+
+theAudio.addEventListener(`timeupdate`,event=>{
+    trackProgress.value = theAudio.currentTime/ theAudio.duration;
+    trackTime.textContent = secondtomin(theAudio.currentTime);
+})
+const secondtomin = (sec) =>{
+    return `${Math.floor(sec/60)}: ${Math.round(sec % 60).toString().padStart(2,'0')}`
+}
+playorpause.addEventListener(`click`,changebutton);
+forward.addEventListener(`click`,nextsong)
+backward.addEventListener(`click`,previoussong)
