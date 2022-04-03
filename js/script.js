@@ -56,7 +56,7 @@ const musiclist = [
 
 const theAudio = new Audio();
 const name = document.querySelector(`#name`);
-const playorpause = document.querySelector(`#stop`);
+const playorpause = document.querySelector(`#play`);
 const forward = document.querySelector(`#next`);
 const backward = document.querySelector(`#previous`);
 const trackTime = document.querySelector(`#tracktime`);
@@ -104,9 +104,7 @@ window.addEventListener(`load`,function(event){
             theAudio.src=`music/${iitem.dataset.prodid}.mp3`;
             theAudio.play();
             num = parseInt(iitem.dataset.prodid);
-            albumpicture.src=`albumpic/${iitem.dataset.prodid}.jpg`;
             name.textContent = `Name:${musiclist[parseInt(iitem.dataset.prodid) - 1].name}`
-            albumname.textContent=`Album:${musiclist[parseInt(iitem.dataset.prodid) - 1].albumname}`;
         }
     })
 
