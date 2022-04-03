@@ -5,7 +5,7 @@ const musiclist = [
         icon: `fas fa-play-circle fa-2x`,
         prodID: 1,
         length: 230,
-        rating: 3.9,
+        rating: 3,
         likeit: true,
         isplaying: false,
     },
@@ -15,7 +15,7 @@ const musiclist = [
         icon: `fas fa-play-circle fa-2x`,
         prodID: 2,
         length: 130,
-        rating: 4.2,
+        rating: 4,
         likeit: true,
         isplaying: false,
     },
@@ -26,7 +26,7 @@ const musiclist = [
 
         prodID: 3,
         length: 130,
-        rating: 4.5,
+        rating: 5,
         likeit: true,
         isplaying: false,
     },
@@ -37,7 +37,7 @@ const musiclist = [
 
         prodID: 4,
         length: 230,
-        rating: 3.5,
+        rating: 3,
         likeit: true,
         isplaying: false,
     },
@@ -48,7 +48,7 @@ const musiclist = [
 
         prodID: 5,
         length: 310,
-        rating: 4.1,
+        rating: 4,
         likeit: true,
         isplaying: false,
     }
